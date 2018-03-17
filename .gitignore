@@ -104,3 +104,4 @@ ENV/
 naomipy.service
 naomipy_wrapper.sh
 requirements.txt
+test.py

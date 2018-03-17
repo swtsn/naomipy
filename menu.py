@@ -88,7 +88,10 @@ def main():
 
             lcd.clear()
             lcd.message("Game uploaded")
-            time.sleep(200)
+            time.sleep(80)
+
+            lcd.clear()
+            lcd.message(game_display[cur_idx])
 
             pressed_button = LCD.SELECT
 
