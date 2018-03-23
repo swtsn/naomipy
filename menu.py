@@ -8,6 +8,8 @@ from triforce_tools import TriforceUploader
 
 IP_ADDRESS = "192.168.88.90"
 ROM_DIR = os.path.join('/', 'media', 'naomi')
+SUCCESS_CHAR_CODE = [0, 1, 3, 22, 28, 8, 0]
+FAILURE_CHAR_CODE = [0, 27, 14, 4, 14, 27, 0]
 
 
 def generate_game_list():
@@ -37,22 +39,40 @@ def debug_display(games, cur_idx, new_idx, button):
     print(f"Pressed {button}. Current: {cur_idx}, New: {new_idx}.")
 
 
+def _display_success(lcd):
+    lcd.set_color(0.0, 1.0, 0.0)
+    lcd.clear()
+    lcd.message("SUCCESS \x01")
+    time.sleep(2)
+    lcd.clear()
+    lcd.message("SUCCESS \x01\nPress SELECT")
+
+    # Wait until user presses SELECT
+    while True:
+        if lcd.is_pressed(LCD.SELECT):
+            return
+
+
 def main():
     lcd = LCD.Adafruit_CharLCDPlate()
     lcd.set_color(1.0, 0.0, 1.0)
-    # First pass, no menu
-    # main_menu = ["Select Game", "Test NetDIMM"]
-    
+
+    # Create check mark at \x01
+    lcd.create_char(1, SUCCESS_CHAR_CODE)
+
+    # Create X mark at \x02
+    lcd.create_char(2, FAILURE_CHAR_CODE)
+
     games = generate_game_list()
     game_display = sorted(games.keys())
+
+    uploader = TriforceUploader(IP_ADDRESS, lcd)
     
     pressed_button = None
     cur_idx = 0
     
     lcd.clear()
     lcd.message(game_display[cur_idx])
-
-    uploader = TriforceUploader(IP_ADDRESS, lcd)
     
     while True:
         if lcd.is_pressed(LCD.DOWN):
@@ -86,10 +106,9 @@ def main():
             filename = games[game_display[cur_idx]]
             uploader.upload_game(os.path.join(ROM_DIR, filename))
 
-            lcd.clear()
-            lcd.message("Game uploaded")
-            time.sleep(80)
-
+            current_bg = (lcd._red, lcd._green, lcd._blue)
+            _display_success(lcd)
+            lcd.set_color(*current_bg)
             lcd.clear()
             lcd.message(game_display[cur_idx])
 

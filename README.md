@@ -10,4 +10,5 @@ TODO
 * Turn off LCD on exit
 * Configuration solution
 * UI enhancements
+* Status propagation for writing game to DIMM
 * Fix game list
