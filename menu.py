@@ -24,7 +24,7 @@ def handle_sigterm(signum=None, frame=None):
     * Turn off backlight
     * Exit script
     """
-    lcd = LCD()
+    lcd = LCD.Adafruit_CharLCDPlate()
     lcd.clear()
     lcd.enable_display(False)
     lcd.set_backlight(False)
