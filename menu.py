@@ -1,4 +1,6 @@
 import os
+import signal
+import sys
 import time
 
 import Adafruit_CharLCD as LCD
@@ -6,10 +8,28 @@ import Adafruit_CharLCD as LCD
 from games import GAME_TO_FILENAME_MAP
 from triforce_tools import TriforceUploader
 
+
 IP_ADDRESS = "192.168.88.90"
 ROM_DIR = os.path.join('/', 'media', 'naomi')
 SUCCESS_CHAR_CODE = [0, 1, 3, 22, 28, 8, 0, 0]
 FAILURE_CHAR_CODE = [0, 27, 14, 4, 14, 27, 0, 0]
+
+
+def handle_sigterm(signum=None, frame=None):
+    """Handle sigterm
+
+    Graciously shutdown when we receive a SIGTERM.
+
+    * Turn off display
+    * Turn off backlight
+    * Exit script
+    """
+    lcd = LCD()
+    lcd.clear()
+    lcd.enable_display(False)
+    lcd.set_backlight(False)
+    sys.exit(0)
+signal.signal(signal.SIGTERM, handle_sigterm)
 
 
 def get_bg_colors(lcd):
