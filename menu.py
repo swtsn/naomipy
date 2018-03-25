@@ -115,7 +115,7 @@ def main():
             filename = games[game_display[cur_idx]]
             uploader.upload_game(os.path.join(ROM_DIR, filename))
 
-            current_bg = get_bg_colors(lcd._red, lcd._green, lcd._blue)
+            current_bg = get_bg_colors(lcd)
             _display_success(lcd)
             lcd.set_color(*current_bg)
             lcd.clear()
