@@ -12,3 +12,4 @@ TODO
 * UI enhancements
 * Status propagation for writing game to DIMM
 * Fix game list
+* Figure out when an Atomiswave game won't let us load another game

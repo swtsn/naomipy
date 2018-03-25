@@ -8,8 +8,17 @@ from triforce_tools import TriforceUploader
 
 IP_ADDRESS = "192.168.88.90"
 ROM_DIR = os.path.join('/', 'media', 'naomi')
-SUCCESS_CHAR_CODE = [0, 1, 3, 22, 28, 8, 0]
-FAILURE_CHAR_CODE = [0, 27, 14, 4, 14, 27, 0]
+SUCCESS_CHAR_CODE = [0, 1, 3, 22, 28, 8, 0, 0]
+FAILURE_CHAR_CODE = [0, 27, 14, 4, 14, 27, 0, 0]
+
+
+def get_bg_colors(lcd):
+    """Move this into utils.
+
+    Background color pins are active low.
+    This won't work for screens that support pwm.
+    """
+    return (lcd._gpio.is_low(lcd._red), lcd._gpio.is_low(lcd._green), lcd._gpio.is_low(lcd._blue))
 
 
 def generate_game_list():
@@ -42,10 +51,10 @@ def debug_display(games, cur_idx, new_idx, button):
 def _display_success(lcd):
     lcd.set_color(0.0, 1.0, 0.0)
     lcd.clear()
-    lcd.message("SUCCESS \x01")
+    lcd.message("Success! \x01")
     time.sleep(2)
     lcd.clear()
-    lcd.message("SUCCESS \x01\nPress SELECT")
+    lcd.message("Success! \x01\nPress Select")
 
     # Wait until user presses SELECT
     while True:
@@ -85,7 +94,7 @@ def main():
     
             cur_idx = new_idx
             pressed_button = LCD.DOWN
-            time.sleep(0.5)
+            time.sleep(0.25)
     
         if lcd.is_pressed(LCD.UP):
             if pressed_button == LCD.UP:
@@ -97,7 +106,7 @@ def main():
     
             cur_idx = new_idx
             pressed_button = LCD.UP
-            time.sleep(0.5)
+            time.sleep(0.25)
 
         if lcd.is_pressed(LCD.SELECT):
             lcd.clear()
@@ -106,7 +115,7 @@ def main():
             filename = games[game_display[cur_idx]]
             uploader.upload_game(os.path.join(ROM_DIR, filename))
 
-            current_bg = (lcd._red, lcd._green, lcd._blue)
+            current_bg = get_bg_colors(lcd._red, lcd._green, lcd._blue)
             _display_success(lcd)
             lcd.set_color(*current_bg)
             lcd.clear()
