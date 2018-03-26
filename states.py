@@ -40,7 +40,7 @@ class State:
 class GameSelect(State):
     def __init__(self, lcd, dest_ip=None):
         super().__init__(lcd)
-        self.games = generate_game_list
+        self.games = sorted(generate_game_list().keys())
         self.cur_idx = 0
 
         if not dest_ip:
@@ -60,7 +60,7 @@ class GameSelect(State):
         if button in (LCD.LEFT, LCD.RIGHT):
             return DIMMSelect(self.lcd)
 
-        if !self.menu_flag:
+        if not self.menu_flag:
             if button == LCD.SELECT:
                 self.menu_flag = True
                 self.lcd.clear()
@@ -115,26 +115,26 @@ class DIMMSelect(State):
             # t4 - idx resets to 0
             return GameSelect(self.lcd)
 
-        if !self.menu_flag:
+        if not self.menu_flag:
             if button == LCD.SELECT:
                 self.menu_flag = True
                 self.lcd.clear()
-                self.lcd.message(self.games[self.cur_idx])
+                self.lcd.message(self.targets[self.cur_idx])
 
         else:
-            if button == self.lcd.UP:
+            if button == LCD.UP:
                 new_idx = (self.cur_idx - 1) % len(self.targets)
                 self.lcd.clear()
                 self.lcd.message(self.targets[new_idx])
                 self.cur_idx = new_idx
 
-            if button == self.lcd.DOWN:
+            if button == LCD.DOWN:
                 new_idx = (self.cur_idx + 1) % len(self.targets)
                 self.lcd.clear()
                 self.lcd.message(self.targets[new_idx])
                 self.cur_idx = new_idx
 
-            if button == self.lcd.SELECT:
+            if button == LCD.SELECT:
                 return GameSelect(self.lcd, self.targets[self.cur_idx])
 
         return self

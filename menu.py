@@ -44,7 +44,6 @@ def main():
     lcd.create_char(2, FAILURE_CHAR_CODE)
 
     menu = MainMenu(lcd)
-    lcd.clear()
 
     pressed_button = None
 
