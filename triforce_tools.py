@@ -15,10 +15,6 @@ from Crypto.Cipher import DES
 PORT = 10703
 
 
-# Logical flow:
-# connect_to_device
-# upload_game
-
 class TriforceUploader:
     def __init__(self, ip_address, display):
         self.ip = ip_address
