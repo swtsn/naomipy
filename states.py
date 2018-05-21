@@ -2,7 +2,8 @@ import time
 
 import Adafruit_CharLCD as LCD
 
-from utils import generate_game_list, get_filepath_for_game
+import utils
+
 from triforce_tools import TriforceUploader, IP_ADDRESSES
 
 
@@ -37,7 +38,7 @@ class State:
 class GameSelect(State):
     def __init__(self, lcd, installer=None):
         super().__init__(lcd)
-        self.games = sorted(generate_game_list().keys())
+        self.games = sorted(utils.generate_game_list().keys())
         self.cur_idx = 0
 
         self.installer = installer
@@ -72,9 +73,6 @@ class GameSelect(State):
                 self.cur_idx = new_idx
 
             if button == LCD.SELECT:
-                self.lcd.clear()
-                self.lcd.message("Loading game...")
-
                 # There may be no installer set yet, if this is the case we
                 # should create one explicitly. This allows us to do JIT
                 # pinging of the default net DIMM to ensure it's turned on.
@@ -86,8 +84,11 @@ class GameSelect(State):
 
                     self.installer = TriforceUploader(IP_ADDRESSES[0], self.lcd)
 
-                self.installer.upload_game(get_filepath_for_game(self.games[self.cur_idx]))
-                current_bg = get_bg_colors(self.lcd)
+                self.lcd.clear()
+                self.lcd.message("Loading game\n{}".format(self.installer.ip_address))
+
+                self.installer.upload_game(utils.get_filepath_for_game(self.games[self.cur_idx]))
+                current_bg = utils.get_bg_colors(self.lcd)
                 _display_success(self.lcd)
                 self.lcd.set_color(*current_bg)
                 self.lcd.clear()

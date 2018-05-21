@@ -5,6 +5,8 @@ I decided to reinvent the wheel for fun. Currently functional with its only feat
 
 TODO
 ----
+* Refactor the quick display functions
+* Implement socket test
 * States probably don't need to have the lcd as a member
 * Awkward creation of Uploader, try to refactor (new_menu is messy)
 * Fix & improve logging

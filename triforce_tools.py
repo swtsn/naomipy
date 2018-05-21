@@ -4,6 +4,7 @@ The contents of this file are from the commonly distributed Triforce Netfirm
 Toolbox (`triforcetools.py`). I have done some minor refactoring as well as
 touched up the comments and style, but the majority of the logic is as it was.
 """
+import os
 import socket
 import struct
 import sys
@@ -11,9 +12,25 @@ import zlib
 
 from Crypto.Cipher import DES
 
+import utils
+
 
 IP_ADDRESSES = ["192.168.88.90", "192.168.88.91"]
 PORT = 10703
+
+
+def _display_failure(lcd, msg):
+    lcd.set_color(1.0, 0.0, 0.0)
+    lcd.clear()
+    lcd.message("Failure! \x02\n{}".format(msg))
+    time.sleep(2)
+    lcd.clear()
+    lcd.message("Failure! \x02\nSelect a DIMM")
+
+    # Wait until user presses SELECT
+    while True:
+        if lcd.is_pressed(LCD.SELECT):
+            return
 
 
 class TriforceUploader:
@@ -29,6 +46,13 @@ class TriforceUploader:
     instance = None
 
     def __init__(self, ip_address, display):
+        # Ping DIMM
+        ping_test = os.system("ping -c 1 -w1 {} > /dev/null 2>&1".format(ip_address))
+
+        if ping_test != 0:
+            current_bg = utils.get_bg_colors(display)
+            _display_failure(display, "Can't ping IP")
+
         if not TriforceUploader.instance:
             if not ip_address:
                 ip_address = IP_ADDRESSES[0]
@@ -65,6 +89,8 @@ class TriforceUploader:
         self._restart_host()
         # set time limit to 10h. According to some reports, this does not work.
         # TIME_SetLimit(10*60*1000)
+
+        self.sock.close()
 
     def _set_host_mode(self, v_and, v_or):
         """Puts device into receive mode"""
