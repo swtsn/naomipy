@@ -1,8 +1,9 @@
-from utils import generate_game_list
+import time
 
 import Adafruit_CharLCD as LCD
 
-from triforce_tools import TriforceUploader
+from utils import generate_game_list
+from triforce_tools import TriforceUploader, IP_ADDRESSES
 
 
 def _display_success(lcd):
@@ -73,7 +74,18 @@ class GameSelect(State):
             if button == LCD.SELECT:
                 self.lcd.clear()
                 self.lcd.message("Loading game...")
-                # Do JIT check of installer
+
+                # There may be no installer set yet, if this is the case we
+                # should create one explicitly. This allows us to do JIT
+                # pinging of the default net DIMM to ensure it's turned on.
+                # The UX would be awkward if pinged the DIMM on start up.
+                if not self.installer:
+                    time.sleep(1)
+                    self.lcd.clear()
+                    self.lcd.message("Pinging default\ndevice")
+
+                    self.installer = TriforceUploader(IP_ADDRESSES[0], self.lcd)
+
                 self.installer.upload_game(get_filepath_for_game(self.games[self.cur_idx]))
                 current_bg = get_bg_colors(self.lcd)
                 _display_success(self.lcd)
@@ -89,7 +101,6 @@ class DIMMSelect(State):
     # On first create, ping the DIMM
     class __DIMMSelect:
         def __init__(self, lcd):
-            super().__init__(lcd)
             self.lcd = lcd
             self.targets = IP_ADDRESSES
             self.cur_idx = 0
@@ -103,8 +114,10 @@ class DIMMSelect(State):
     instance = None
 
     def __init__(self, lcd):
+        super().__init__(lcd)
+
         if not DIMMSelect.instance:
-            DIMMSelect.instance = __DIMMSelect(lcd)
+            DIMMSelect.instance = DIMMSelect.__DIMMSelect(lcd)
         else:
             DIMMSelect.instance.lcd = lcd
 
