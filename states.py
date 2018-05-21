@@ -2,7 +2,7 @@ import time
 
 import Adafruit_CharLCD as LCD
 
-from utils import generate_game_list
+from utils import generate_game_list, get_filepath_for_game
 from triforce_tools import TriforceUploader, IP_ADDRESSES
 
 

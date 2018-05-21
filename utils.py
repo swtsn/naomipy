@@ -42,5 +42,5 @@ def get_bg_colors(lcd):
 
 
 
-def get_gilepath_for_game(game_name):
+def get_filepath_for_game(game_name):
     return os.path.join(ROM_DIR, GAME_TO_FILENAME_MAP[game_name])
