@@ -87,7 +87,7 @@ class GameSelect(State):
 
 class DIMMSelect(State):
     # On first create, ping the DIMM
-    def __DIMMSelect:
+    class __DIMMSelect:
         def __init__(self, lcd):
             super().__init__(lcd)
             self.lcd = lcd

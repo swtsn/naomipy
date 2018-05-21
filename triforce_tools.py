@@ -17,7 +17,7 @@ PORT = 10703
 
 
 class TriforceUploader:
-    def __TriforceUploader:
+    class __TriforceUploader:
         def __init__(self, ip_address, display):
             self.ip = ip_address
             self.display = display
