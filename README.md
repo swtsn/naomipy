@@ -5,7 +5,8 @@ I decided to reinvent the wheel for fun. Currently functional with its only feat
 
 TODO
 ----
-* Proper packaging and distribution
+* States probably don't need to have the lcd as a member
+* Awkward creation of Uploader, try to refactor (new_menu is messy)
 * Fix & improve logging
 * Turn off LCD on exit
 * Configuration solution
@@ -13,3 +14,4 @@ TODO
 * Status propagation for writing game to DIMM
 * Fix game list
 * Figure out when an Atomiswave game won't let us load another game
+* Proper packaging and distribution

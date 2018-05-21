@@ -5,9 +5,6 @@ import Adafruit_CharLCD as LCD
 from triforce_tools import TriforceUploader
 
 
-IP_ADDRESSES = ["192.168.88.90", "Missing"]
-
-
 def _display_success(lcd):
     lcd.set_color(0.0, 1.0, 0.0)
     lcd.clear()
@@ -25,7 +22,6 @@ def _display_success(lcd):
 class State:
     def __init__(self, lcd):
         self.lcd = lcd
-        self.target_ip = IP_ADDRESSES[0]
 
         self.lcd.clear()
         self.lcd.message("{}".format(self))
@@ -38,17 +34,12 @@ class State:
 
 
 class GameSelect(State):
-    def __init__(self, lcd, dest_ip=None):
+    def __init__(self, lcd, installer=None):
         super().__init__(lcd)
         self.games = sorted(generate_game_list().keys())
         self.cur_idx = 0
 
-        if not dest_ip:
-            dest = IP_ADDRESSES[0]
-        else:
-            dest = dest_ip
-
-        self.installer = TriforceUploader(dest, lcd)
+        self.installer = installer
 
         # TODO: Consider state machine
         self.menu_flag = False
@@ -82,6 +73,7 @@ class GameSelect(State):
             if button == LCD.SELECT:
                 self.lcd.clear()
                 self.lcd.message("Loading game...")
+                # Do JIT check of installer
                 self.installer.upload_game(get_filepath_for_game(self.games[self.cur_idx]))
                 current_bg = get_bg_colors(self.lcd)
                 _display_success(self.lcd)
@@ -94,13 +86,30 @@ class GameSelect(State):
 
 
 class DIMMSelect(State):
-    def __init__(self, lcd):
-        super().__init__(lcd)
-        self.targets = IP_ADDRESSES
-        self.cur_idx = 0
+    # On first create, ping the DIMM
+    def __DIMMSelect:
+        def __init__(self, lcd):
+            super().__init__(lcd)
+            self.lcd = lcd
+            self.targets = IP_ADDRESSES
+            self.cur_idx = 0
 
-        # TODO: Consider state machine
-        self.menu_flag = False
+            # TODO: Consider state machine
+            self.menu_flag = False
+
+        def __str__(self):
+            return repr(self) + self.cur_idx
+
+    instance = None
+
+    def __init__(self, lcd):
+        if not DIMMSelect.instance:
+            DIMMSelect.instance = __DIMMSelect(lcd)
+        else:
+            DIMMSelect.instance.lcd = lcd
+
+    def __getattr__(self, name):
+        return getattr(self.instance, name)
 
     def __str__(self):
         return "DIMM Select"
@@ -135,6 +144,8 @@ class DIMMSelect(State):
                 self.cur_idx = new_idx
 
             if button == LCD.SELECT:
-                return GameSelect(self.lcd, self.targets[self.cur_idx])
+                # Ping installer here but later consider moving. This will help with JIT pinging.
+                installer = TriforceUploader(self.targets[self.cur_idx], lcd)
+                return GameSelect(self.lcd, installer)
 
         return self
