@@ -5,11 +5,22 @@ import time
 
 import Adafruit_CharLCD as LCD
 
-from new_menu import MainMenu
+from states import GameSelect
 
 
 SUCCESS_CHAR_CODE = [0, 1, 3, 22, 28, 8, 0, 0]
 FAILURE_CHAR_CODE = [0, 27, 14, 4, 14, 27, 0, 0]
+
+
+class MainMenu:
+    def __init__(self, display):
+        self.state = GameSelect(display, None)
+
+    def on_button_press(self, button):
+        self.state = self.state.on_button_press(button)
+
+        # Rate limit all button presses at 250ms
+        time.sleep(0.25)
 
 
 def handle_sigterm(signum=None, frame=None):
@@ -27,10 +38,6 @@ def handle_sigterm(signum=None, frame=None):
     lcd.set_backlight(False)
     sys.exit(0)
 signal.signal(signal.SIGTERM, handle_sigterm)
-
-
-def debug_display(games, cur_idx, new_idx, button):
-    print(f"Pressed {button}. Current: {cur_idx}, New: {new_idx}.")
 
 
 def main():
