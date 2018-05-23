@@ -6,7 +6,6 @@ import time
 import Adafruit_CharLCD as LCD
 
 from new_menu import MainMenu
-from triforce_tools import TriforceUploader
 
 
 SUCCESS_CHAR_CODE = [0, 1, 3, 22, 28, 8, 0, 0]
