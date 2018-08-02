@@ -5,6 +5,8 @@ I decided to reinvent the wheel for fun. Currently functional with its only feat
 
 TODO
 ----
+* Currently the game uploads fine, but the display gives no output
+* There is a bug where on the "Game Select" screen, if you click SELECT, it takes you to "Choose target device"
 * Refactor the quick display functions
 * Implement socket test
 * States probably don't need to have the lcd as a member
@@ -17,3 +19,4 @@ TODO
 * Fix game list
 * Figure out when an Atomiswave game won't let us load another game
 * Proper packaging and distribution
+* Generalize lcd to 'display' so that testing interfaces can be more easily written

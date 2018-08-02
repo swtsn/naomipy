@@ -14,7 +14,7 @@ FAILURE_CHAR_CODE = [0, 27, 14, 4, 14, 27, 0, 0]
 
 class MainMenu:
     def __init__(self, display):
-        self.state = GameSelect(display, None)
+        self.state = GameSelect(display)
 
     def on_button_press(self, button):
         self.state = self.state.on_button_press(button)

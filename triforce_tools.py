@@ -8,7 +8,10 @@ import os
 import socket
 import struct
 import sys
+import time
 import zlib
+
+import Adafruit_CharLCD as LCD
 
 from Crypto.Cipher import DES
 
@@ -20,6 +23,8 @@ PORT = 10703
 
 
 def _display_failure(lcd, msg):
+    current_bg = utils.get_bg_colors(lcd)
+
     lcd.set_color(1.0, 0.0, 0.0)
     lcd.clear()
     lcd.message("Failure! \x02\n{}".format(msg))
@@ -30,6 +35,24 @@ def _display_failure(lcd, msg):
     # Wait until user presses SELECT
     while True:
         if lcd.is_pressed(LCD.SELECT):
+            lcd.set_color(*current_bg)
+            return
+
+
+def _display_success(lcd):
+    current_bg = utils.get_bg_colors(lcd)
+
+    lcd.set_color(0.0, 1.0, 0.0)
+    lcd.clear()
+    lcd.message("Success! \x01")
+    time.sleep(2)
+    lcd.clear()
+    lcd.message("Success! \x01\nPress Select")
+
+    # Wait until user presses SELECT
+    while True:
+        if lcd.is_pressed(LCD.SELECT):
+            lcd.set_color(*current_bg)
             return
 
 
@@ -52,6 +75,7 @@ class TriforceUploader:
         if ping_test != 0:
             current_bg = utils.get_bg_colors(display)
             _display_failure(display, "Can't ping IP")
+            raise RuntimeError("Failed to ping IP {}".format(ip_address))
 
         if not TriforceUploader.instance:
             if not ip_address:
@@ -68,6 +92,7 @@ class TriforceUploader:
 
     def upload_game(self, filepath):
         """Manages upload of the game to the target device."""
+        # TODO: Update UI for ping test and "now loading"
         try:
             # Note that this port is only open on:
             # - All Type-3 triforces
@@ -80,22 +105,28 @@ class TriforceUploader:
             print("Failed to connect to socket: {}".format(str(e)))
             raise e
     
-        self._set_host_mode(0, 1)
+        self._set_host_mode_and_wait(0, 1)
         self._set_security_keycode()
-
         self._upload_file_to_DIMM(filepath)
-        
-        # Restart host, this will boot into game
         self._restart_host()
-        # set time limit to 10h. According to some reports, this does not work.
-        # TIME_SetLimit(10*60*1000)
+
+        _display_success(self.display)
 
         self.sock.close()
 
-    def _set_host_mode(self, v_and, v_or):
+    def _set_host_mode_and_wait(self, v_and, v_or):
         """Puts device into receive mode"""
         self.sock.send(struct.pack("<II", 0x07000004, (v_and << 8) | v_or))
-        # return readsocket(0x8)
+
+        # Block until the device is ready to receive game data
+        self._read_data_from_socket(0x8)
+
+    def _read_data_from_socket(self, num_bytes):
+        """Reads a specified number of bytes from the socket"""
+        data = ""
+        while len(data) < num_bytes:
+            bytes_remaining = num_bytes - len(data)
+            data += self.sock.recv(bytes_remaining)
 
     def _set_security_keycode(self):
         """Sets the security keycode on the target device to the zero-key"""

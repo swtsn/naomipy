@@ -1,14 +1,11 @@
 import os
 
-from functools import lru_cache
-
 from games import GAME_TO_FILENAME_MAP
 
 
 ROM_DIR = os.path.join('/', 'media', 'naomi')
 
 
-@lru_cache()
 def generate_game_list():
     """Generates dict of available games on the system
 
