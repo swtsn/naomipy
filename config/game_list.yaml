@@ -1,0 +1,734 @@
+- display_name: 18 Wheeler DX
+  display_orientation: horizontal
+  filename: 18_Wheeler_DX.bin
+  full_name: 18 Wheeler DX
+  requires_peripheral: true
+  system: NAOMI
+- display_name: 18 Wheeler Standard
+  display_orientation: horizontal
+  filename: 18_Wheeler_STD.bin
+  full_name: 18 Wheeler Standard
+  requires_peripheral: true
+  system: NAOMI
+- display_name: Airline Pilots
+  display_orientation: horizontal
+  filename: AirlinePilots.bin
+  full_name: Airline Pilots
+  requires_peripheral: true
+  system: NAOMI
+- display_name: "Akatsuki Blitz\nkampf Ausf Achse"
+  display_orientation: horizontal
+  filename: Akatsuki_Bk_Ausf_Achse.bin
+  full_name: Akatsuki Blitzkampf Ausf Achse
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Alienfront
+  display_orientation: horizontal
+  filename: AlienFront.bin
+  full_name: Alienfront
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Animal Basket
+  display_orientation: vertical
+  filename: gdrom_anmlbskt.bin
+  full_name: Animal Basket
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Azumanga Daioh Puzzle Bobble
+  display_orientation: horizontal
+  filename: AzumangaDaiohPuzzleBobble_v3.bin
+  full_name: Azumanga Daioh Puzzle Bobble
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Beach Spikers
+  display_orientation: horizontal
+  filename: BeachSpikers.bin
+  full_name: Beach Spikers
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Border Down
+  display_orientation: horizontal
+  filename: BorderDown_v3.bin
+  full_name: Border Down
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Burning Casino
+  display_orientation: horizontal
+  filename: BurningCasino_v3.bin
+  full_name: Burning Casino
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Cannon Spike
+  display_orientation: horizontal
+  filename: GunSpike.bin
+  full_name: Cannon Spike
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Capcom Vs. SNK 2
+  display_orientation: horizontal
+  filename: Capcom_Vs_SNK_2_Millionaire_Fighting_2001.bin
+  full_name: Capcom Vs. SNK 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Capcom Vs. SNK Pro
+  display_orientation: horizontal
+  filename: cvspro.bin
+  full_name: Capcom Vs. SNK Pro
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Chaos Field
+  display_orientation: horizontal
+  filename: ChaosField_v3.bin
+  full_name: Chaos Field
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Cleopatra Fortune Plus
+  display_orientation: horizontal
+  filename: CleopatraFortunePlus_v6.bin
+  full_name: Cleopatra Fortune Plus
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Club Kart European Session
+  display_orientation: horizontal
+  filename: ClubKartEuropeanSessionUnlocked.bin
+  full_name: Club Kart European Session
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Confidential Mission
+  display_orientation: horizontal
+  filename: ConfidentialMission.bin
+  full_name: Confidential Mission
+  requires_peripheral: true
+  system: NAOMI
+- display_name: Cosmic Smash
+  display_orientation: horizontal
+  filename: CosmicSmash.bin
+  full_name: Cosmic Smash
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Crazy Taxi
+  display_orientation: horizontal
+  filename: CrazyTaxi.bin
+  full_name: Crazy Taxi
+  requires_peripheral: true
+  system: NAOMI
+- display_name: Dead Or Alive 2
+  display_orientation: horizontal
+  filename: DeadOrAlive2.bin
+  full_name: Dead Or Alive 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Dead Or Alive 2 Millenium
+  display_orientation: horizontal
+  filename: DeadOrAlive2Millenium.bin
+  full_name: Dead Or Alive 2 Millenium
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Death Crimson OX
+  display_orientation: horizontal
+  filename: DeathCrimsonOX.bin
+  full_name: Death Crimson OX
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Demolish Fist
+  display_orientation: horizontal
+  filename: demolishfist.bin
+  full_name: Demolish Fist
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Dirty Pigskin Football
+  display_orientation: horizontal
+  filename: gdrom_dirtypigskin_v3.bin
+  full_name: Dirty Pigskin Football
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Doki Doki Idol Star Seeker
+  display_orientation: horizontal
+  filename: DokiDokiIdolStarSeeker.bin
+  full_name: Doki Doki Idol Star Seeker
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Dolphin Blue
+  display_orientation: horizontal
+  filename: dolphinblue.bin
+  full_name: Dolphin Blue
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Dynamite Deka EX
+  display_orientation: horizontal
+  filename: DynamiteDekaEx.bin
+  full_name: Dynamite Deka EX
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Faster Than Speed
+  display_orientation: horizontal
+  filename: gdrom-ftspeed_v6.bin
+  full_name: Faster Than Speed
+  requires_peripheral: true
+  system: Atomiswave
+- display_name: Giant Gram 2000
+  display_orientation: horizontal
+  filename: Giant_Gram_2000.BIN
+  full_name: Giant Gram 2000
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Giga Wing 2
+  display_orientation: horizontal
+  filename: GigaWing2.bin
+  full_name: Giga Wing 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Guilty Gear Isuka
+  display_orientation: horizontal
+  filename: ggisuka.bin
+  full_name: Guilty Gear Isuka
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Guilty Gear X Ver. 1.5
+  display_orientation: horizontal
+  filename: ggx15.bin
+  full_name: Guilty Gear X Ver. 1.5
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Guilty Gear XX Accent Core
+  display_orientation: horizontal
+  filename: GuiltyGearXXAccentCore_v6.bin
+  full_name: Guilty Gear XX Accent Core
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Guilty Gear XX \#Reload
+  display_orientation: horizontal
+  filename: GuiltyGearXXReload.bin
+  full_name: Guilty Gear XX \#Reload
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Guilty Gear XX Slash
+  display_orientation: horizontal
+  filename: GuiltyGearXXSlash_v6.bin
+  full_name: Guilty Gear XX Slash
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Gun Survivor 2
+  display_orientation: horizontal
+  filename: GunSurvivor2.bin
+  full_name: Gun Survivor 2
+  requires_peripheral: true
+  system: NAOMI
+- display_name: 'Heavy Metal: Geomatrix'
+  display_orientation: horizontal
+  filename: HeavyMetalGeomatrix.bin
+  full_name: 'Heavy Metal: Geomatrix'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Hokuto No Ken
+  display_orientation: horizontal
+  filename: FOTNS_Naomi2_Fixed.bin
+  full_name: Hokuto No Ken
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: House Of The Dead 2
+  display_orientation: horizontal
+  filename: Gdrom_HOTD2_v2.bin
+  full_name: House Of The Dead 2
+  requires_peripheral: true
+  system: NAOMI
+- display_name: Ikaruga
+  display_orientation: vertical
+  filename: Ikaruga_v3.bin
+  full_name: Ikaruga
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Illvelo
+  display_orientation: vertical
+  filename: Illvelo_v6.bin
+  full_name: Illvelo
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Initial D 2 (Export)
+  display_orientation: horizontal
+  filename: InitialD2exp.bin
+  full_name: Initial D 2 (Export)
+  requires_peripheral: true
+  system: NAOMI 2
+- display_name: Initial D 2 (JP)
+  display_orientation: horizontal
+  filename: InitialD2jap.bin
+  full_name: Initial D 2 (JP)
+  requires_peripheral: true
+  system: NAOMI 2
+- display_name: Initial D 2 (JP Rev. B)
+  display_orientation: horizontal
+  filename: InitialD2jap-revb.bin
+  full_name: Initial D 2 (JP Rev. B)
+  requires_peripheral: true
+  system: NAOMI 2
+- display_name: Initial D 3 (Export)
+  display_orientation: horizontal
+  filename: InitialD3Export.Bin
+  full_name: Initial D 3 (Export)
+  requires_peripheral: true
+  system: NAOMI 2
+- display_name: Initial D (Export)
+  display_orientation: horizontal
+  filename: InitialDexp.bin
+  full_name: Initial D (Export)
+  requires_peripheral: true
+  system: NAOMI 2
+- display_name: Initial D (JP)
+  display_orientation: horizontal
+  filename: InitialDjap.bin
+  full_name: Initial D (JP)
+  requires_peripheral: true
+  system: NAOMI 2
+- display_name: 'Jingi Storm: The Arcade'
+  display_orientation: horizontal
+  filename: JingyStormTheArcade.bin
+  full_name: 'Jingi Storm: The Arcade'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Jambo! Safari
+  display_orientation: horizontal
+  filename: Jambo_Safari.bin
+  full_name: Jambo! Safari
+  requires_peripheral: true
+  system: NAOMI
+- display_name: Karous
+  display_orientation: horizontal
+  filename: karous_v3.bin
+  full_name: Karous
+  requires_peripheral: false
+  system: NAOMI
+- display_name: King Of Fighters Neo Wave
+  display_orientation: horizontal
+  filename: KingOfFightersNewWave.bin
+  full_name: King Of Fighters Neo Wave
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: King Of Fighters XI
+  display_orientation: horizontal
+  filename: gdrom_KOFXI_v5.bin
+  full_name: King Of Fighters XI
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: King Of Fighters XI All Fighters
+  display_orientation: horizontal
+  filename: kofxi_all_fighters.bin
+  full_name: King Of Fighters XI All Fighters
+  requires_peripheral: false
+  system: Atomiswave
+  test: true
+- display_name: King Of Route 66
+  display_orientation: horizontal
+  filename: KingOfRoute66.bin
+  full_name: King Of Route 66
+  requires_peripheral: true
+  system: NAOMI
+- display_name: 'Knights Of Valour: 7 Spirits'
+  display_orientation: horizontal
+  filename: kov7spirits_Naomi2_Fixed.bin
+  full_name: Knights Of Valour Seven Spirits
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Kuru Kuru Chameleon
+  display_orientation: horizontal
+  filename: KuruKuruChameleon_v3.bin
+  full_name: Kuru Kuru Chameleon
+  requires_peripheral: false
+  system: NAOMI
+- display_name: 'Lupin: The Typing'
+  display_orientation: horizontal
+  filename: Lupin-TheTyping.bin
+  full_name: 'Lupin: The Typing'
+  requires_peripheral: true
+  system: NAOMI
+- display_name: 'Lupin 3: The Shooting'
+  display_orientation: horizontal
+  filename: Lupin3-TheShooting.bin
+  full_name: 'Lupin 3: The Shooting'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Mamoru-kun Curse!
+  display_orientation: vertical
+  filename: mamonorov6.bin
+  full_name: Mamoru-kun wa Norowarete Shimatta!
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Marvel Vs. Capcom 2
+  display_orientation: horizontal
+  filename: MarvelVsCapcom2.bin
+  full_name: Marvel Vs. Capcom 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Marvel Vs. Capcom 2\nUnlocked
+  display_orientation: horizontal
+  filename: MarvelVsCapcom2_unlocked.bin
+  full_name: Marvel Vs. Capcom 2 Unlocked
+  requires_peripheral: false
+  system: NAOMI
+  test: true
+- display_name: Maximum Speed
+  display_orientation: horizontal
+  filename: gdrom_maxspeed_v4.bin
+  full_name: Maximum Speed
+  requires_peripheral: true
+  system: Atomiswave
+- display_name: Melty Blood Actress Again
+  display_orientation: horizontal
+  filename: MeltyBloodActressAgain.bin
+  full_name: Melty Blood Actress Again
+  requires_peripheral: false
+  system: NAOMI
+- display_name: 'Melty Blood: Act Cadenza (A)'
+  display_orientation: horizontal
+  filename: MeltyBloodActCadenzaVerA.bin
+  full_name: 'Melty Blood: Act Cadenza (A)'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: 'Melty Blood: Act Cadenza (B)'
+  display_orientation: horizontal
+  filename: MeltyBloodActCadenzaVerB_v3.bin
+  full_name: 'Melty Blood: Act Cadenza (B)'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: 'Melty Blood: Act Cadenza (B2)'
+  display_orientation: horizontal
+  filename: MeltyBloodActCadenzaVerB2_v3.bin
+  full_name: 'Melty Blood: Act Cadenza (B2)'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Metal Slug 6
+  display_orientation: horizontal
+  filename: MetalSlug6.bin
+  full_name: Metal Slug 6
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Gundam\nFed Vs. Zeon
+  display_orientation: horizontal
+  filename: MobileSuitGundam-FederationVsZeon.bin
+  full_name: Mobile Suit Gundam Federation Vs. Zeon
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Gundam\nFed Vs. Zeon DX
+  display_orientation: horizontal
+  filename: MobileSuitGundam-FederationVsZeonDX.bin
+  full_name: Mobile Suit Gundam Federation Vs. Zeon DX
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Monkey Ball
+  display_orientation: horizontal
+  filename: MonkeyBall.bin
+  full_name: Monkey Ball
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Musapey No Choco Marker
+  display_orientation: horizontal
+  filename: MusapeysChocoMarker.bin
+  full_name: Musapey No Choco Marker
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Neogeo Battle Colliseum
+  display_orientation: horizontal
+  filename: NeoGeoBattleColliseum.bin
+  full_name: Neogeo Battle Colliseum
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Noukone Puzzle Takoron
+  display_orientation: horizontal
+  filename: NoukonePuzzleTakoron.bin
+  full_name: Noukone Puzzle Takoron
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Out Trigger
+  display_orientation: horizontal
+  filename: otrigger.bin
+  full_name: Out Trigger
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Power Stone
+  display_orientation: horizontal
+  filename: Powerstone-alt.BIN
+  full_name: Power Stone
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Power Stone 2
+  display_orientation: horizontal
+  filename: PowerStone2.bin
+  full_name: Power Stone 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Psyvariar 2
+  display_orientation: vertical
+  filename: Psyvariar2_v6.bin
+  full_name: Psyvariar 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Puyo Puyo Fever
+  display_orientation: horizontal
+  filename: PuyoPuyoFever_v6.bin
+  full_name: Puyo Puyo Fever
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Quiz Keitai Q Mode
+  display_orientation: horizontal
+  filename: QuizKeitaiQMode.bin
+  full_name: Quiz Keitai Q Mode
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Radirgy
+  display_orientation: horizontal
+  filename: Radirgy_v3.bin
+  full_name: Radirgy
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Radirgy Noa
+  display_orientation: horizontal
+  filename: RadirgyNoa_v6.bin
+  full_name: Radirgy Noa
+  requires_peripheral: false
+  system: NAOMI
+- display_name: 'Rival Schools 2: Project Justice'
+  display_orientation: horizontal
+  filename: RivalSchools2-ProjectJustice.bin
+  full_name: 'Rival Schools 2: Project Justice'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Rumble Fish
+  display_orientation: horizontal
+  filename: gdrom-rumblefish.bin
+  full_name: Rumble Fish
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Rumble Fish 2
+  display_orientation: horizontal
+  filename: gdrom_rumblef2_v4.bin
+  full_name: Rumble Fish 2
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Salary Man Kintarou
+  display_orientation: horizontal
+  filename: gdrom_salmankt_JVS_OK_BIOS_OK_Video_OK.bin
+  full_name: Salary Man Kintarou
+  requires_peripheral: true
+  system: Atomiswave
+- display_name: Samba De Amigo
+  display_orientation: horizontal
+  filename: Samba_De_Amigo_EPR-22966B_Patched.bin
+  full_name: Samba De Amigo
+  requires_peripheral: true
+  system: NAOMI
+- display_name: Samurai Showdown VI
+  display_orientation: horizontal
+  filename: SamuraiShowdownVI-SamuraiSpirits_v4.bin
+  full_name: Samurai Showdown VI
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: SEGA Bass\nFishing
+  display_orientation: horizontal
+  filename: basschallenge.bin
+  full_name: SEGA Bass Fishing Challenge
+  requires_peripheral: true
+  system: Atomiswave
+- display_name: SEGA Clay Challenge
+  display_orientation: horizontal
+  filename: claychallenge.bin
+  full_name: SEGA Clay Challenge
+  requires_peripheral: true
+  system: Atomiswave
+- display_name: SEGA Marine Fishing
+  display_orientation: horizontal
+  filename: Sega_Marine_Fishing_EPR-22221.bin
+  full_name: SEGA Marine Fishing
+  requires_peripheral: true
+  system: NAOMI
+- display_name: SEGA Strike Fighter
+  display_orientation: horizontal
+  filename: SegaStrikeFighter.bin
+  full_name: SEGA Strike Fighter
+  requires_peripheral: false
+  system: NAOMI
+- display_name: SEGA Tetris
+  display_orientation: horizontal
+  filename: SegaTetris.bin
+  full_name: SEGA Tetris
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Senko No Ronde New Version
+  display_orientation: horizontal
+  filename: senkonewv6.bin
+  full_name: Senko No Ronde New Version
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Senko No Ronde SP
+  display_orientation: horizontal
+  filename: SenkoNoRondeSP_v3.bin
+  full_name: Senko No Ronde SP
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Shikigami no Shiro II
+  display_orientation: vertical
+  filename: ShikigamiNoShiroII_v6.bin
+  full_name: Shikigami no Shiro II
+  requires_peripheral: false
+  system: NAOMI
+- display_name: 'Shooting Love 2007: Exzeal'
+  display_orientation: vertical
+  filename: ShootingLove2007-Exzeal_v6.bin
+  full_name: 'Shooting Love 2007: Exzeal'
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Slash Out
+  display_orientation: horizontal
+  filename: Slashout.bin
+  full_name: Slash Out
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Spawn
+  display_orientation: horizontal
+  filename: spawn.bin
+  full_name: Spawn
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Spikers Battle
+  display_orientation: horizontal
+  filename: SpikersBattle.bin
+  full_name: Spikers Battle
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Sports Jam
+  display_orientation: horizontal
+  filename: SportsJam.bin
+  full_name: Sports Jam
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Sports Shooting USA
+  display_orientation: horizontal
+  filename: gdrom_sprtshot_v11.bin
+  full_name: Sports Shooting USA
+  requires_peripheral: true
+  system: Atomiswave
+- display_name: Street Fighter Zero 3 Upper
+  display_orientation: horizontal
+  filename: StreetFighterZero3Upper.bin
+  full_name: Street Fighter Zero 3 Upper
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Super Shanghai 2005
+  display_orientation: horizontal
+  filename: SuperShanghai2005VerA_v6.bin
+  full_name: Super Shanghai 2005
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Sushi Bar
+  display_orientation: horizontal
+  filename: gdrom_Sushibar.bin
+  full_name: Sushi Bar
+  requires_peripheral: false
+  system: Atomiswave
+- display_name: Tetris Kiwamemichi
+  display_orientation: horizontal
+  filename: TetrisKiwamemichi_v6.bin
+  full_name: Tetris Kiwamemichi
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Toy Fighter
+  display_orientation: horizontal
+  filename: ToyFighter.bin
+  full_name: Toy Fighter
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Triggerheart Exelica
+  display_orientation: horizontal
+  filename: TriggerHeartExelica_v6.bin
+  full_name: Triggerheart Exelica
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Trizeal
+  display_orientation: vertical
+  filename: Trizeal_v3.bin
+  full_name: Trizeal
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Under Defeat
+  display_orientation: horizontal
+  filename: UnderDefeat_v3.bin
+  full_name: Under Defeat
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Athlete
+  display_orientation: horizontal
+  filename: VirtuaAthlete.bin
+  full_name: Virtua Athlete
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Figter 4 Final Tuned
+  display_orientation: horizontal
+  filename: VirtuaFighter4FinalTuned_verb.bin
+  full_name: Virtua Figter 4 Final Tuned
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Golf
+  display_orientation: horizontal
+  filename: VirtuaGolf.bin
+  full_name: Virtua Golf
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua NBA
+  display_orientation: horizontal
+  filename: VirtuaNBA.bin
+  full_name: Virtua NBA
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Striker 2 Ver.2000
+  display_orientation: horizontal
+  filename: VirtuaStriker2-2000.bin
+  full_name: Virtua Striker 2 Ver.2000
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Striker 3
+  display_orientation: horizontal
+  filename: VirtuaStriker3.bin
+  full_name: Virtua Striker 3
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Tennis
+  display_orientation: horizontal
+  filename: VirtuaTennis.bin
+  full_name: Virtua Tennis
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Virtua Tennis 2
+  display_orientation: horizontal
+  filename: VirtuaTennis2.bin
+  full_name: Virtua Tennis 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: WWF Royal Rumble
+  display_orientation: horizontal
+  filename: WWF_Royal_Rumble.BIN
+  full_name: WWF Royal Rumble
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Wave Runner GP
+  display_orientation: horizontal
+  filename: WaveRunnerGP.bin
+  full_name: Wave Runner GP
+  requires_peripheral: true
+  system: NAOMI
+- display_name: World Series Baseball
+  display_orientation: horizontal
+  filename: WorldSeriesBaseball.bin
+  full_name: World Series Baseball
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Zero Gunner 2
+  display_orientation: horizontal
+  filename: ZeroGunner2.bin
+  full_name: Zero Gunner 2
+  requires_peripheral: false
+  system: NAOMI
+- display_name: Zombie Revenge
+  display_orientation: horizontal
+  filename: ZombieRevenge.bin
+  full_name: Zombie Revenge
+  requires_peripheral: false
+  system: NAOMI

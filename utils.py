@@ -1,61 +1,72 @@
 import bisect
 import os
 
-from games import GAME_TO_FILENAME_MAP
+import yaml
 
 
 ROM_DIR = os.path.join('/', 'media', 'naomi')
 
 
-def center_text(test_str):
+def center_text(display_string, extra_padding=0):
+    """
+    TODO: Parameterize extra padding so that this can generically work
+    for games and for subjects.
+    """
     display_length = 16
+    # This assumes padding is on top line only
+    top_usable_area = display_length - extra_padding
 
-    # Display length of 16, arrows on each end
-    display_space = display_length - 2
-
-    # Leave room for spaces so it doesn't look weird
-    padded_space = display_space - 2
-
-    tokens = test_str.split()
+    tokens = display_string.split()
     lengths = _calculate_lengths(tokens)
 
     # By default we want to divide on our optimal length
-    group_idx = bisect.bisect_right(lengths, padded_space)
+    group_idx = bisect.bisect_right(lengths, top_usable_area)
     top_line_tokens = tokens[:group_idx]
     # TODO: Recompute lengths for bottom line
     bottom_line_tokens = tokens[group_idx:]
 
     # Check if the first token was not ideal
-    if not len(top_line_tokens):
-        group_idx = bisect.bisect_right(lengths, display_space)
+    if extra_padding and not len(top_line_tokens):
+        group_idx = bisect.bisect_right(lengths, display_length)
 
         top_line_tokens = tokens[:group_idx]
         bottom_line_tokens = tokens[group_idx:]
 
         if not top_line_tokens:
-            raise RuntimeError("Category {} too long to fit on display".format(tokens[0]))
+            raise RuntimeError("Name {} too long to fit on display".format(tokens[0]))
 
     top_line = " ".join(top_line_tokens)
     bottom_line = " ".join(bottom_line_tokens)
 
+    if len(bottom_line) > display_length:
+        raise RuntimeError("Bottom line too long: {}, {}".format(top_line, bottom_line))
+
     # Recombine string with spaces and left justify each line where necessary
-    top_line_space = display_space - len(top_line)
-    top_line_pad_left = top_line_space / 2
-    top_line_pad_right = top_line_pad_left + (top_line_space % 2)
+    top_line_padding = display_length - len(top_line)
+    top_line_pad_left = top_line_padding / 2
+    top_line_pad_right = top_line_pad_left + (top_line_padding % 2)
 
     # For the bottom line we use the entire display length because we aren't going to display arrows
-    bottom_line_space = display_length - len(bottom_line)
-    bottom_line_pad_left = bottom_line_space / 2
-    bottom_line_pad_right = bottom_line_pad_left + (bottom_line_space % 2)
+    bottom_line_padding = display_length - len(bottom_line)
+    bottom_line_pad_left = bottom_line_padding / 2
+    bottom_line_pad_right = bottom_line_pad_left + (bottom_line_padding % 2)
 
-    return "<{}{}{}>|\n|{}{}{}".format(
+    top_display = "{}{}{}".format(
         ' '*top_line_pad_left,
         top_line,
-        ' '*top_line_pad_right,
+        ' '*top_line_pad_right
+    )
+
+    if not bottom_line:
+        return top_display
+
+    bottom_display = "{}{}{}".format(
         ' '*bottom_line_pad_left,
         bottom_line,
         ' '*bottom_line_pad_right
     )
+
+    return "{}\n{}".format(top_display, bottom_display)
 
 
 def _calculate_lengths(tokens):
@@ -85,14 +96,16 @@ def generate_game_list():
     :rtype: dict
     :raises: RuntimeError if directory has no games
     """
-    games = {}
+    path_to_game_list = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'game_list.yaml')
+    game_to_filename_map = {}
 
-    for display_name in GAME_TO_FILENAME_MAP:
-        filename = GAME_TO_FILENAME_MAP[display_name]
-        if os.path.isfile(os.path.join(ROM_DIR, filename)):
-            games[display_name] = filename
+    game_list = yaml.load(file(path_to_game_list, 'r'))
 
-    return games
+    for game in game_list:
+        if os.path.isfile(os.path.join(ROM_DIR, game['filename'])):
+            game_to_filename_map[game['display_name']] = game
+
+    return game_to_filename_map
 
 
 def get_bg_colors(lcd):
@@ -105,5 +118,5 @@ def get_bg_colors(lcd):
 
 
 
-def get_filepath_for_game(game_name):
-    return os.path.join(ROM_DIR, GAME_TO_FILENAME_MAP[game_name])
+def get_filepath_for_game(game):
+    return os.path.join(ROM_DIR, game['filename'])

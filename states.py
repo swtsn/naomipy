@@ -23,8 +23,17 @@ class State(object):
 
 class GameSelect(State):
     def __init__(self, lcd, game_idx=0):
+        """
+        :param lcd: Handle to an LCD
+        :param int game_idx: Optional param for idx at which to start game list
+
+        TODO: Add dict formats
+        :ivar list game_list: Full list of games with all details
+        :ivar list games: List of game display names
+        """
         super(GameSelect, self).__init__(lcd)
-        self.games = sorted(utils.generate_game_list().keys())
+        self.game_list = utils.generate_game_list()
+        self.games = sorted(self.game_list.keys())
         self.game_idx = game_idx
 
     def __str__(self):
@@ -47,7 +56,7 @@ class GameSelect(State):
             self.game_idx = new_idx
 
         if button == LCD.SELECT:
-            return DIMMSelect(self.lcd, self.games[self.game_idx])
+            return DIMMSelect(self.lcd, self.game_list[self.games[self.game_idx]])
 
         return self
 
@@ -69,6 +78,10 @@ class DIMMSelect(State):
     instance = None
 
     def __init__(self, lcd, selected_game):
+        """
+        :param lcd: An lcd handle. This is not generalized.
+        :param dict selected_game: A dict describing the game to be loaded.
+        """
         super(DIMMSelect, self).__init__(lcd)
 
         if not DIMMSelect.instance:
