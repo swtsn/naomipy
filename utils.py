@@ -4,7 +4,7 @@ import os
 import yaml
 
 
-ROM_DIR = os.path.join('/', 'media', 'naomi')
+ROM_DIR = os.path.join(os.path.expanduser('~'), 'ROMs')
 
 
 def center_text(display_string, extra_padding=0):

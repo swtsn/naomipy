@@ -214,10 +214,10 @@
   full_name: Gun Survivor 2
   requires_peripheral: true
   system: NAOMI
-- display_name: 'Heavy Metal: Geomatrix'
+- display_name: "Heavy Metal: Geomatrix"
   display_orientation: horizontal
   filename: HeavyMetalGeomatrix.bin
-  full_name: 'Heavy Metal: Geomatrix'
+  full_name: "Heavy Metal: Geomatrix"
   requires_peripheral: false
   system: NAOMI
 - display_name: Hokuto No Ken
@@ -280,10 +280,10 @@
   full_name: Initial D (JP)
   requires_peripheral: true
   system: NAOMI 2
-- display_name: 'Jingi Storm: The Arcade'
+- display_name: "Jingi Storm: The Arcade"
   display_orientation: horizontal
   filename: JingyStormTheArcade.bin
-  full_name: 'Jingi Storm: The Arcade'
+  full_name: "Jingi Storm: The Arcade"
   requires_peripheral: false
   system: NAOMI
 - display_name: Jambo! Safari
@@ -323,7 +323,7 @@
   full_name: King Of Route 66
   requires_peripheral: true
   system: NAOMI
-- display_name: 'Knights Of Valour: 7 Spirits'
+- display_name: "Knights Of Valour: 7 Spirits"
   display_orientation: horizontal
   filename: kov7spirits_Naomi2_Fixed.bin
   full_name: Knights Of Valour Seven Spirits
@@ -335,16 +335,16 @@
   full_name: Kuru Kuru Chameleon
   requires_peripheral: false
   system: NAOMI
-- display_name: 'Lupin: The Typing'
+- display_name: "Lupin: The Typing"
   display_orientation: horizontal
   filename: Lupin-TheTyping.bin
-  full_name: 'Lupin: The Typing'
+  full_name: "Lupin: The Typing"
   requires_peripheral: true
   system: NAOMI
-- display_name: 'Lupin 3: The Shooting'
+- display_name: "Lupin 3: The Shooting"
   display_orientation: horizontal
   filename: Lupin3-TheShooting.bin
-  full_name: 'Lupin 3: The Shooting'
+  full_name: "Lupin 3: The Shooting"
   requires_peripheral: false
   system: NAOMI
 - display_name: Mamoru-kun Curse!
@@ -378,22 +378,22 @@
   full_name: Melty Blood Actress Again
   requires_peripheral: false
   system: NAOMI
-- display_name: 'Melty Blood: Act Cadenza (A)'
+- display_name: "Melty Blood: Act Cadenza (A)"
   display_orientation: horizontal
   filename: MeltyBloodActCadenzaVerA.bin
-  full_name: 'Melty Blood: Act Cadenza (A)'
+  full_name: "Melty Blood: Act Cadenza (A)"
   requires_peripheral: false
   system: NAOMI
-- display_name: 'Melty Blood: Act Cadenza (B)'
+- display_name: "Melty Blood: Act Cadenza (B)"
   display_orientation: horizontal
   filename: MeltyBloodActCadenzaVerB_v3.bin
-  full_name: 'Melty Blood: Act Cadenza (B)'
+  full_name: "Melty Blood: Act Cadenza (B)"
   requires_peripheral: false
   system: NAOMI
-- display_name: 'Melty Blood: Act Cadenza (B2)'
+- display_name: "Melty Blood: Act Cadenza (B2)"
   display_orientation: horizontal
   filename: MeltyBloodActCadenzaVerB2_v3.bin
-  full_name: 'Melty Blood: Act Cadenza (B2)'
+  full_name: "Melty Blood: Act Cadenza (B2)"
   requires_peripheral: false
   system: NAOMI
 - display_name: Metal Slug 6
@@ -486,10 +486,10 @@
   full_name: Radirgy Noa
   requires_peripheral: false
   system: NAOMI
-- display_name: 'Rival Schools 2: Project Justice'
+- display_name: "Rival Schools 2: Project Justice"
   display_orientation: horizontal
   filename: RivalSchools2-ProjectJustice.bin
-  full_name: 'Rival Schools 2: Project Justice'
+  full_name: "Rival Schools 2: Project Justice"
   requires_peripheral: false
   system: NAOMI
 - display_name: Rumble Fish
@@ -570,10 +570,10 @@
   full_name: Shikigami no Shiro II
   requires_peripheral: false
   system: NAOMI
-- display_name: 'Shooting Love 2007: Exzeal'
+- display_name: "Shooting Love 2007: Exzeal"
   display_orientation: vertical
   filename: ShootingLove2007-Exzeal_v6.bin
-  full_name: 'Shooting Love 2007: Exzeal'
+  full_name: "Shooting Love 2007: Exzeal"
   requires_peripheral: false
   system: NAOMI
 - display_name: Slash Out
