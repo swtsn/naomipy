@@ -9,7 +9,8 @@ ROM_DIR = os.path.join(os.path.expanduser('~'), 'ROMs')
 
 def center_text(display_string, extra_padding=0):
     """
-    TODO: Parameterize extra padding so that this can generically work
+    TODO:
+    * Parameterize extra padding so that this can generically work
     for games and for subjects.
     """
     display_length = 16

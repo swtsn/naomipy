@@ -33,7 +33,7 @@ class GameSelect(State):
         """
         super(GameSelect, self).__init__(lcd)
         self.game_list = utils.generate_game_list()
-        self.games = sorted(self.game_list.keys())
+        self.game_names = sorted(self.game_list.keys())
         self.game_idx = game_idx
 
     def __str__(self):
@@ -44,19 +44,19 @@ class GameSelect(State):
             pass
 
         if button == LCD.UP:
-            new_idx = (self.game_idx - 1) % len(self.games)
+            new_idx = (self.game_idx - 1) % len(self.game_names)
             self.lcd.clear()
-            self.lcd.message(self.games[new_idx])
+            self.lcd.message(utils.center_text(self.game_names[new_idx]))
             self.game_idx = new_idx
 
         if button == LCD.DOWN:
-            new_idx = (self.game_idx + 1) % len(self.games)
+            new_idx = (self.game_idx + 1) % len(self.game_names)
             self.lcd.clear()
-            self.lcd.message(self.games[new_idx])
+            self.lcd.message(utils.center_text(self.game_names[new_idx]))
             self.game_idx = new_idx
 
         if button == LCD.SELECT:
-            return DIMMSelect(self.lcd, self.game_list[self.games[self.game_idx]])
+            return DIMMSelect(self.lcd, self.game_list[self.game_names[self.game_idx]])
 
         return self
 
@@ -95,10 +95,10 @@ class DIMMSelect(State):
 
     def __str__(self):
         # TODO: Add in up/down arrows
-        return "Choose target\ndevice"
+        return "Choose target\ndevice: \x03/x04"
 
     def on_button_press(self, button):
-        if button == LCD.LEFT:
+        if button in (LCD.LEFT, LCD.RIGHT):
             # There's a workflow bug here:
             # t0 - Set idx 1
             # t1 - Go to game
