@@ -196,7 +196,7 @@
   full_name: Guilty Gear XX Accent Core
   requires_peripheral: false
   system: NAOMI
-- display_name: Guilty Gear XX \#Reload
+- display_name: "Guilty Gear XX #Reload"
   display_orientation: horizontal
   filename: GuiltyGearXXReload.bin
   full_name: Guilty Gear XX \#Reload
@@ -323,7 +323,7 @@
   full_name: King Of Route 66
   requires_peripheral: true
   system: NAOMI
-- display_name: "Knights Of Valour: 7 Spirits"
+- display_name: "Knights Of Valor: 7 Spirits"
   display_orientation: horizontal
   filename: kov7spirits_Naomi2_Fixed.bin
   full_name: Knights Of Valour Seven Spirits
@@ -359,7 +359,7 @@
   full_name: Marvel Vs. Capcom 2
   requires_peripheral: false
   system: NAOMI
-- display_name: Marvel Vs. Capcom 2\nUnlocked
+- display_name: "Marvel Vs. Capcom 2\nUnlocked"
   display_orientation: horizontal
   filename: MarvelVsCapcom2_unlocked.bin
   full_name: Marvel Vs. Capcom 2 Unlocked
@@ -402,13 +402,13 @@
   full_name: Metal Slug 6
   requires_peripheral: false
   system: Atomiswave
-- display_name: Gundam\nFed Vs. Zeon
+- display_name: "Gundam\nFed Vs. Zeon"
   display_orientation: horizontal
   filename: MobileSuitGundam-FederationVsZeon.bin
   full_name: Mobile Suit Gundam Federation Vs. Zeon
   requires_peripheral: false
   system: NAOMI
-- display_name: Gundam\nFed Vs. Zeon DX
+- display_name: "Gundam\nFed Vs. Zeon DX"
   display_orientation: horizontal
   filename: MobileSuitGundam-FederationVsZeonDX.bin
   full_name: Mobile Suit Gundam Federation Vs. Zeon DX
@@ -522,7 +522,7 @@
   full_name: Samurai Showdown VI
   requires_peripheral: false
   system: Atomiswave
-- display_name: SEGA Bass\nFishing
+- display_name: "SEGA Bass\nFishing"
   display_orientation: horizontal
   filename: basschallenge.bin
   full_name: SEGA Bass Fishing Challenge
